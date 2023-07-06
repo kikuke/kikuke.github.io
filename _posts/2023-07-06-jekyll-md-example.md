@@ -5,7 +5,7 @@ categories: [ETC, Jekyll]
 
 tags: [Markdown, Post]
 
-last_modified_at: 2023-07-06T00:00:00-00:00
+last_modified_at: 2023-07-06T00:00:000
 ---
 
 # 1. 메타데이터
@@ -21,7 +21,7 @@ categories: [TOP_CATEGORIE, SUB_CATEGORIE]
 
 tags: [TAG1, TAG2, TAG3]
 
-last_modified_at: 2023-07-06T00:00:00-00:00
+last_modified_at: 2023-07-06T00:00:000
 ---
 ```
 
