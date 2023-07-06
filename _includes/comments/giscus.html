@@ -26,10 +26,12 @@
       'data-category-id': '{{ site.comments.giscus.category_id }}',
       'data-mapping': '{{ site.comments.giscus.mapping | default: 'pathname' }}',
       'data-reactions-enabled': '{{ site.comments.giscus.reactions_enabled | default: '1' }}',
-      'data-emit-metadata': '0',
-      'data-theme': initTheme,
+      'data-emit-metadata': '{{ site.comments.giscus.emit_metadata }}',
+      'data-theme': '{{ site.comments.giscus.theme }}',
       'data-input-position': '{{ site.comments.giscus.input_position | default: 'bottom' }}',
       'data-lang': '{{ site.comments.giscus.lang | default: lang }}',
+      'data-strict': '{{ site.comments.giscus.strict }}',
+      'data-loading': '{{ site.comments.giscus.loading }}',
       crossorigin: 'anonymous',
       async: ''
     };
