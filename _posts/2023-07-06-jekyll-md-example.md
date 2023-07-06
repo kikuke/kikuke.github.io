@@ -1,13 +1,9 @@
 ---
 title: "Jekyll Markdown 기반 포스트 작성 예제"
 
-categories:
-    - Jekyll
+categories: [Jekyll]
 
-tags:
-    - Jekyll
-    - Markdown
-    - Post
+tags: [Jekyll, Markdown, Post]
 
 last_modified_at: 2023-07-06T00:00:00-00:00
 ---
