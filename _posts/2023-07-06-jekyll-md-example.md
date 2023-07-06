@@ -55,8 +55,7 @@ This is a H1
  -------------
  ```
  
-This is a H2
--------------
+<h2 data-toc-skip>This is a H2</h2>
 
 -------
 
@@ -75,15 +74,24 @@ This is a H2
  ###### This is a H6
  ```
 # This is a H1
-## This is a H2
-### This is a H3
+<h2 data-toc-skip>This is a H2</h2>
+<h3 data-toc-skip>This is a H3</h3>
 #### This is a H4
 ##### This is a H5
 ###### This is a H6
 
+> chirpy 테마는 toc는 h1 ~ h3를 자동으로 인덱싱한다. 때문에 특정 h1 ~ h3을 toc 인덱싱에서 제외하려면 아래와 같이 html로 작성하면 된다.
+
+ ```
+ # toc 제외
+ <h2 data-toc-skip>H2 - heading</h2>
+ 
+ <h3 data-toc-skip>H3 - heading</h3>
+ ```
+
 -------
 
- > header는 특별한 의미가 있어서 그런지 앞에 공백을 포함한 문자가 오면 인식되지 않는다.
+> header는 특별한 의미가 있어서 그런지 앞에 공백을 포함한 문자가 오면 인식되지 않는다.
 
 -------
 
@@ -113,7 +121,7 @@ This is a H2
  >   code
  >   ```
  ```
- > ### This is a H3
+ > <h3 data-toc-skip>This is a H3</h3>
  > * List
  >   ```
  >   code
@@ -169,6 +177,44 @@ This is a H2
     - 녹색
         * 파랑
             + 주황
+
+-------
+
+### 2.3.3. 작업 목록
+
+ ```
+ - [ ] TODO
+  - [x] Completed
+  - [ ] Defeat COVID-19
+    - [x] Vaccine production
+    - [ ] Economic recovery
+    - [ ] People smile again
+ ```
+
+ - [ ] TODO
+  - [x] Completed
+  - [ ] Defeat COVID-19
+    - [x] Vaccine production
+    - [ ] Economic recovery
+    - [ ] People smile again
+
+-------
+
+### 2.3.4. 정의 목록
+
+ ```
+ Sun
+   : the star around which the earth orbits
+ 
+ Moon
+   : the natural satellite of the earth, visible by reflected light from the sun
+ ```
+
+ Sun
+   : the star around which the earth orbits
+ 
+ Moon
+   : the natural satellite of the earth, visible by reflected light from the sun
 
 -------
 
@@ -300,6 +346,12 @@ public class BootSpringBootApplication {
  * 외부 링크: <http://example.com>
  * 이메일 링크: <address@example.com>
 
+ ```
+ * [현재 페이지 내부 링크](#26-링크)
+ ```
+
+ * [현재 페이지 내부 링크](#26-링크)
+
 -------
 
 ## 2.7. 강조
@@ -387,4 +439,5 @@ __double underscores__
 # * 참고자료
 
  * [마크다운(Markdown) 사용법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
+ * [첫 포스팅 작성하기 - 마크다운(Markdown)](https://wlqmffl0102.github.io/posts/WritingThe-First-post-1-Markdown-Grammar1/)
  * [하우투: 같이 따라하기 시리즈](https://devinlife.com/howto/)
