@@ -75,8 +75,6 @@ avatar: "/assets/img/profile.jpg"
 
 # boolean type, the global switch for TOC in posts.
 toc: true
-toc_sticky: true
-toc_label: "목차"
 
 comments:
   active: giscus  # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
