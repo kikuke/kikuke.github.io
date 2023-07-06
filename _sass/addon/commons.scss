@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 /*
   The common styles
 */
@@ -34,7 +35,7 @@ body {
     env(safe-area-inset-bottom) env(safe-area-inset-left);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
-  font-family: $font-family-base;
+  font-family: 'Gowun Dodum', $font-family-base;
 }
 
 /* --- Typography --- */
