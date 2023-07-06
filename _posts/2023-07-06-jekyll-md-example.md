@@ -1,9 +1,9 @@
 ---
 title: "Jekyll Markdown 기반 포스트 작성 예제"
 
-categories: [Jekyll]
+categories: [ETC, Jekyll]
 
-tags: [Jekyll, Markdown, Post]
+tags: [Markdown, Post]
 
 last_modified_at: 2023-07-06T00:00:00-00:00
 ---
@@ -17,9 +17,9 @@ last_modified_at: 2023-07-06T00:00:00-00:00
 ---
 title: "제목"
 
-categories: [카테고리]
+categories: [TOP_CATEGORIE, SUB_CATEGORIE]
 
-tags: [태그1, 태그2, 태그3]
+tags: [TAG1, TAG2, TAG3]
 
 last_modified_at: 2023-07-06T00:00:00-00:00
 ---
@@ -380,6 +380,7 @@ __double underscores__
 # * 참고할 만한 자료
 
  * [Markdown Guide](https://www.markdownguide.org/getting-started/)
+ * [Chirpy Blog](https://chirpy.cotes.page/)
 
 -------
 
