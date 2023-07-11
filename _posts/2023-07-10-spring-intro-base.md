@@ -19,7 +19,7 @@ last_modified_at: 2023-07-10T00:00:000
 사용자의 HTTP 요청이 스프링에 내장된 Tomcat 웹서버에 들어오면 Tomcat은 이것을 Contoller에 전달하게 된다.  
 이때 두가지 조건에 따라 전달되는 방식이 달라지게 된다.
 
-1. 요청받은 uri가 Controller에 `@GetMapping()` 등과 같은 어노테이션을 통해 매핑된 메소드에 존재하는가?
+1. 요청받은 HTTP 리퀘스트, uri가 Controller에 `@GetMapping()` 등과 같은 어노테이션을 통해 매핑된 메소드에 존재하는가?
     - 존재하지 않는다면 이미 만들어진 html 파일을 전달하는 정적 컨텐츠 방식으로 동작
 2. `@ResponseBody` 애노테이션이 매핑된 메소드에 있는가?
     - `@ResponseBody` 애노테이션이 있다면, HttpMessageConverter를 이용해 만들어진 JSON 또는 String을 전달하는 API 방식으로 동작  
@@ -38,7 +38,7 @@ last_modified_at: 2023-07-10T00:00:000
 
 정적 컨텐츠 방식의 동작 과정은 아래와 같다.
 
-1. 컨트롤러에서 요청받은 uri에 매핑되는 메소드가 없을 때
+1. 컨트롤러에서 요청받은 HTTP 리퀘스트, uri에 매핑되는 메소드가 없을 때
 2. `:resouce/static` 하위의 폴더에 일치하는 url의 파일을 찾고,
 3. 해당 url의 파일을 그대로 전달한다.
 
@@ -55,7 +55,7 @@ last_modified_at: 2023-07-10T00:00:000
 
 MVC와 템플릿 엔진 방식의 동작 과정은 아래와 같다.
 
-1. 컨트롤러에서 요청받은 uri에 매핑되는 메소드가 있고, `@ResponseBody` 애노테이션이 없다면
+1. 컨트롤러에서 요청받은 HTTP 리퀘스트, uri에 매핑되는 메소드가 있고, `@ResponseBody` 애노테이션이 없다면
 2. 컨트롤러에서 관련 데이터 처리를 하고 Model에 값을 주입한 뒤
 3. 컨트롤러에서 리턴 받은 ViewName(String)을 `:resource/templates/ + {ViewName} + .html` 파일을 찾아
 4. ViewResolver(템플릿 엔진)에 Model과 함께 전달해 html을 동적으로 생성한 뒤
@@ -82,7 +82,7 @@ API 방식은 Controller에서 리턴한 객체 또는 String을 HttpMessageConv
 
 API 방식의 동작 과정은 아래와 같다.
 
-1. 컨트롤러에서 요청받은 uri에 매핑되는 메소드가 있고, `@ResponseBody` 애노테이션이 있다면
+1. 컨트롤러에서 요청받은 HTTP 리퀘스트, uri에 매핑되는 메소드가 있고, `@ResponseBody` 애노테이션이 있다면
 2. 컨트롤러에서 관련 데이터 처리를 하고 객체 또는 String을 리턴
 3. 컨트롤러에서 리턴 받은 것을 HttpMessageConverter를 통해 객체면 Json으로 변환후 Http body에 담아 HttpMessage로 만들어 전송, String이면 String을 Http body에 담아 HttpMessage로 만들어전송
 
@@ -96,7 +96,7 @@ HttpMessageConverter는 Http Accept 헤더와 매핑된 메소드의 반환 타�
 학교 프로젝트를 하기 위해 급하게 처음 사용해 본 것은 API 방식이다.  
 때문에 나는 스프링이 API 방식만 지원하는 줄 알았는데, 나중에 자료들을 찾다보니 웹서버를 구현하는 방식이 많아서 스프링은 뷰를 어떻게 구현하는지 궁금한 점이 되게 많았다.  
 특히 나는 그동안 Json 데이터와 String 데이터만 보냈었는데 아예 뷰를 보여주는 것이 어떻게 가능한지 궁금했다.  
-하지만 이번 강의를 들어보며 스프링, 웹서버는 요청받은 http 메시지와 uri에 따라 그에 해당되는 로직을 처리한 뒤 그냥 데이터를 담아 Http Message를 전달할 뿐, Http Message에 담긴 데이터와, 그걸 요청한 클라이언트가 안드로이드 앱인지, 웹 브라우저인지에 따라 데이터를 이용해 나온 결과물이 달랐을 뿐이라는 것을 알게됐다.
+하지만 이번 강의를 들어보며 스프링, 웹서버는 요청받은 HTTP 리퀘스트와와 uri에 따라 그에 해당되는 로직을 처리한 뒤 그냥 데이터를 담아 Http Message를 전달할 뿐, Http Message에 담긴 데이터와, 그걸 요청한 클라이언트가 안드로이드 앱인지, 웹 브라우저인지에 따라 데이터를 이용해 나온 결과물이 달랐을 뿐이라는 것을 알게됐다.
 
 -------
 
