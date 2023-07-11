@@ -58,7 +58,7 @@ MVC와 템플릿 엔진 방식의 동작 과정은 아래와 같다.
 1. 컨트롤러에서 요청받은 HTTP 리퀘스트, uri에 매핑되는 메소드가 있고, `@ResponseBody` 애노테이션이 없다면
 2. 컨트롤러에서 관련 데이터 처리를 하고 Model에 값을 주입한 뒤
 3. 컨트롤러에서 리턴 받은 ViewName(String)을 `:resource/templates/ + {ViewName} + .html` 파일을 찾아
-   - 만약 이때 받은 String이 `redirect:{uri}`라면 뷰를 찾지 않고, 해당 uri로 리다이렉트 시킨다. 
+   - 만약 이때 받은 String이 `redirect:{uri}`라면 파일을 찾지 않고, 바로 해당 uri로 리다이렉트 시킨다. 
 4. ViewResolver(템플릿 엔진)에 Model과 함께 전달해 html을 동적으로 생성한 뒤
 5. 생성된 html 파일을 전달한다.
 
