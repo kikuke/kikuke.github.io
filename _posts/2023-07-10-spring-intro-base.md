@@ -1,16 +1,16 @@
 ---
-title: "Spring Boot 웹 개발 방식"
+title: "Spring Boot HTTP Request 처리 방식"
 
 categories: [Spring, 스프링 입문]
 
-tags: [웹, 개발 방식]
+tags: [HTTP, Request]
 
 last_modified_at: 2023-07-10T00:00:000
 ---
 
 ## 개요
 
-**스프링의 웹 개발 방식은 크게 세가지가 있다.**
+**스프링의 HTTP Request 처리 방식은 크게 세가지가 있다.**
 
 1. [정적 컨텐츠 방식](#정적-컨텐츠-방식)
 2. [MVC와 템플릿 엔진 방식](#mvc와-템플릿-엔진-방식)
